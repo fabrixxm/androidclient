@@ -667,9 +667,9 @@ public class Syncer {
                 }
                 catch (Exception e) {
                     Log.e(TAG, "contact write error", e);
-                    syncResult.stats.numSkippedEntries = op;
-                    syncResult.databaseError = true;
-                    return;
+                    syncResult.stats.numSkippedEntries += op;
+                    /*syncResult.databaseError = true;
+                    return;*/
                 }
 
                 commit(usersProvider, syncResult);
